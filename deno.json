@@ -1,0 +1,12 @@
+{
+  "tasks": {
+    "dev": "deno run --watch --env -A main.ts",
+    "start": "deno run --env -A --unstable-ffi main.ts"
+  },
+  "imports": {
+    "@db/sqlite": "jsr:@db/sqlite@^0.12.0",
+    "@octokit/types": "npm:@octokit/types@^13.6.1",
+    "consola": "npm:consola@^3.2.3",
+    "octokit": "npm:octokit@^4.0.2"
+  }
+}
