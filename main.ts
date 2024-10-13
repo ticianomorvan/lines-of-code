@@ -1,9 +1,15 @@
-import { closeDatabase, openDatabase } from "./database.ts";
+import { closeDatabase, generateTable, openDatabase } from "./database.ts";
 import { printUserStatistics } from "./github.ts";
 
 async function mainThread() {
   const database = openDatabase();
-  await printUserStatistics({ loggingLevel: "loose" });
+  generateTable(database);
+
+  await printUserStatistics({
+    databaseInstance: database,
+    loggingLevel: "strict",
+  });
+
   closeDatabase(database);
 }
 

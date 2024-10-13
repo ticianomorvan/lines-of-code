@@ -1,5 +1,5 @@
 import { Database } from "@db/sqlite";
-import type { CommitStats, RepositoryCommit } from "./types.ts";
+import type { CommitStats, Repository, RepositoryCommit } from "./types.ts";
 
 export type DatabaseInstance = InstanceType<typeof Database>;
 
@@ -30,14 +30,18 @@ export function generateTable(instance: DatabaseInstance) {
 export function getCommitStatsBySha(
   instance: DatabaseInstance,
   sha: string,
-): CommitStats {
+): CommitStats | undefined {
   const statement = instance.prepare(`
-    SELECT additions, deletions, total FROM commits WHERE id == "${sha}";
+    SELECT additions, deletions, total FROM commits WHERE id = '${sha}';
   `);
 
-  const [additions, deletions, total] = statement.value<
-    [number, number, number]
-  >()!;
+  const result = statement.value<[number, number, number]>();
+
+  if (!result) {
+    return undefined;
+  }
+
+  const [additions, deletions, total] = result;
 
   return { additions, deletions, total };
 }
@@ -45,4 +49,11 @@ export function getCommitStatsBySha(
 export function storeCommit(
   instance: DatabaseInstance,
   commit: RepositoryCommit,
-) {}
+  repository: Repository,
+) {
+  const statement = instance.prepare(`
+    INSERT INTO commits (id, repository, additions, deletions, total) VALUES ('${commit.sha}', '${repository.full_name}', ${commit.stats?.additions}, ${commit.stats?.deletions}, ${commit.stats?.total});
+  `);
+
+  statement.run();
+}

@@ -10,6 +10,8 @@
     "jsr:@std/fs@0.221": "0.221.0",
     "jsr:@std/path@0.217": "0.217.0",
     "jsr:@std/path@0.221": "0.221.0",
+    "npm:@biomejs/biome@*": "1.9.3",
+    "npm:@biomejs/biome@^1.9.3": "1.9.3",
     "npm:@octokit/types@^13.6.1": "13.6.1",
     "npm:consola@^3.2.3": "3.2.3",
     "npm:octokit@^4.0.2": "4.0.2_@octokit+core@6.1.2"
@@ -64,6 +66,43 @@
     }
   },
   "npm": {
+    "@biomejs/biome@1.9.3": {
+      "integrity": "sha512-POjAPz0APAmX33WOQFGQrwLvlu7WLV4CFJMlB12b6ZSg+2q6fYu9kZwLCOA+x83zXfcPd1RpuWOKJW0GbBwLIQ==",
+      "dependencies": [
+        "@biomejs/cli-darwin-arm64",
+        "@biomejs/cli-darwin-x64",
+        "@biomejs/cli-linux-arm64",
+        "@biomejs/cli-linux-arm64-musl",
+        "@biomejs/cli-linux-x64",
+        "@biomejs/cli-linux-x64-musl",
+        "@biomejs/cli-win32-arm64",
+        "@biomejs/cli-win32-x64"
+      ]
+    },
+    "@biomejs/cli-darwin-arm64@1.9.3": {
+      "integrity": "sha512-QZzD2XrjJDUyIZK+aR2i5DDxCJfdwiYbUKu9GzkCUJpL78uSelAHAPy7m0GuPMVtF/Uo+OKv97W3P9nuWZangQ=="
+    },
+    "@biomejs/cli-darwin-x64@1.9.3": {
+      "integrity": "sha512-vSCoIBJE0BN3SWDFuAY/tRavpUtNoqiceJ5PrU3xDfsLcm/U6N93JSM0M9OAiC/X7mPPfejtr6Yc9vSgWlEgVw=="
+    },
+    "@biomejs/cli-linux-arm64-musl@1.9.3": {
+      "integrity": "sha512-VBzyhaqqqwP3bAkkBrhVq50i3Uj9+RWuj+pYmXrMDgjS5+SKYGE56BwNw4l8hR3SmYbLSbEo15GcV043CDSk+Q=="
+    },
+    "@biomejs/cli-linux-arm64@1.9.3": {
+      "integrity": "sha512-vJkAimD2+sVviNTbaWOGqEBy31cW0ZB52KtpVIbkuma7PlfII3tsLhFa+cwbRAcRBkobBBhqZ06hXoZAN8NODQ=="
+    },
+    "@biomejs/cli-linux-x64-musl@1.9.3": {
+      "integrity": "sha512-TJmnOG2+NOGM72mlczEsNki9UT+XAsMFAOo8J0me/N47EJ/vkLXxf481evfHLlxMejTY6IN8SdRSiPVLv6AHlA=="
+    },
+    "@biomejs/cli-linux-x64@1.9.3": {
+      "integrity": "sha512-x220V4c+romd26Mu1ptU+EudMXVS4xmzKxPVb9mgnfYlN4Yx9vD5NZraSx/onJnd3Gh/y8iPUdU5CDZJKg9COA=="
+    },
+    "@biomejs/cli-win32-arm64@1.9.3": {
+      "integrity": "sha512-lg/yZis2HdQGsycUvHWSzo9kOvnGgvtrYRgoCEwPBwwAL8/6crOp3+f47tPwI/LI1dZrhSji7PNsGKGHbwyAhw=="
+    },
+    "@biomejs/cli-win32-x64@1.9.3": {
+      "integrity": "sha512-cQMy2zanBkVLpmmxXdK6YePzmZx0s5Z7KEnwmrW54rcXK3myCNbQa09SwGZ8i/8sLw0H9F3X7K4rxVNGU8/D4Q=="
+    },
     "@octokit/app@15.1.0_@octokit+core@6.1.2": {
       "integrity": "sha512-TkBr7QgOmE6ORxvIAhDbZsqPkF7RSqTY4pLTtUQCvr6dTXqvi2fFo46q3h1lxlk/sGMQjqyZ0kEahkD/NyzOHg==",
       "dependencies": [
@@ -295,6 +334,7 @@
   "workspace": {
     "dependencies": [
       "jsr:@db/sqlite@0.12",
+      "npm:@biomejs/biome@^1.9.3",
       "npm:@octokit/types@^13.6.1",
       "npm:consola@^3.2.3",
       "npm:octokit@^4.0.2"

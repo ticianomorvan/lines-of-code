@@ -1,9 +1,14 @@
 {
   "tasks": {
     "dev": "deno run --watch --env -A main.ts",
-    "start": "deno run --env -A --unstable-ffi main.ts"
+    "start": "deno run --env -A --unstable-ffi main.ts",
+    "check": "deno run -A npm:@biomejs/biome check ./*.ts",
+    "check:fix": "deno run -A npm:@biomejs/biome check --write ./*.ts",
+    "check:fix-unsafe": "deno run -A npm:@biomejs/biome check --write --unsafe ./*.ts",
+    "format": "deno run -A npm:@biomejs/biome format --write ./*.ts"
   },
   "imports": {
+    "@biomejs/biome": "npm:@biomejs/biome@^1.9.3",
     "@db/sqlite": "jsr:@db/sqlite@^0.12.0",
     "@octokit/types": "npm:@octokit/types@^13.6.1",
     "consola": "npm:consola@^3.2.3",
